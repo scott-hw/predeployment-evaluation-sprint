@@ -1,6 +1,6 @@
 # Evaluation Pipeline
 
-Runs the chatbot evaluation described in Hwang, Jiang & Canessa (2026). For each benchmark item × model × system-prompt combination, the pipeline generates a response then scores it with two LLM judges.
+Runs the chatbot evaluation. For each benchmark item × model × system-prompt combination, the pipeline generates a response then scores it with two LLM judges.
 
 ## Layout
 
