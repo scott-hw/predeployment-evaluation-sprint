@@ -22,7 +22,7 @@ reddit-scraper/
 
 benchmark-tier-creation-pipeline/
   data/inputs/source_packets/
-  data/inputs/language_examples/        (tone examples informed by Reddit output)
+  data/inputs/language_examples/        (tone examples informed by Reddit output - manually selected)
   → data/outputs/benchmark.jsonl
 
 evaluation-pipeline/
