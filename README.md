@@ -2,6 +2,8 @@
 
 Replication code for *Pre-Deployment Diagnostic Evaluation for Public Sector Chatbots*. The paper evaluates a California state agency's Claude-based Digital Assistant against commercial models on post-disaster resource navigation questions derived from the January 2025 Eaton Fire.
 
+**Note**: Exact experiment is not replicable, as the system prompt used is not public. Uploading a separate system prompt is possible to replicate a similar but non-identical procedure.
+
 ## Repository structure
 
 ```
