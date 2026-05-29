@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/benchmark-pipeline/language_example.schema.json",
+  "title": "LanguageExample",
+  "description": "A style example used to guide LLM generation. Contributes register and tone only — never factual content.",
+  "type": "object",
+  "required": [
+    "language_example_id",
+    "source_family",
+    "language_tier",
+    "text"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "language_example_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Unique identifier for this language example."
+    },
+    "source_family": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Origin family: 'fabricated', 'reddit_r_losangeles', etc."
+    },
+    "language_tier": {
+      "type": "string",
+      "enum": ["T1", "T2", "T3"],
+      "description": "Language tier this example represents."
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The example text. Must be de-identified and free of specific factual claims."
+    },
+    "style_tags": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Tags describing the style characteristics of this example."
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Optional notes on sourcing or de-identification."
+    }
+  }
+}

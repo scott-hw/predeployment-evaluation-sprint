@@ -1,0 +1,31 @@
+# LLM API pricing configuration.
+#
+# RESEARCHER NOTE: Verify and update these against current provider pricing
+# before running cost estimates.
+# Anthropic: https://docs.anthropic.com/en/api/overview (Pricing section)
+# OpenAI:    https://openai.com/api/pricing/
+# Last verified: YYYY-MM-DD by <name>
+#
+# Replace <verify_current> with actual USD per million tokens.
+# Example (NOT guaranteed to be current):
+#   claude-sonnet-4-6:  input $3.00/M, output $15.00/M
+#   claude-haiku-4-5:   input $0.80/M, output $4.00/M
+#   gpt-4o:             input $2.50/M, output $10.00/M
+#   gpt-4o-mini:        input $0.15/M, output $0.60/M
+
+models:
+  # Anthropic
+  claude-sonnet-4-6:
+    input_per_million_tokens_usd: <verify_current>
+    output_per_million_tokens_usd: <verify_current>
+  claude-haiku-4-5-20251001:
+    input_per_million_tokens_usd: <verify_current>
+    output_per_million_tokens_usd: <verify_current>
+
+  # OpenAI
+  gpt-4o:
+    input_per_million_tokens_usd: <verify_current>
+    output_per_million_tokens_usd: <verify_current>
+  gpt-4o-mini:
+    input_per_million_tokens_usd: <verify_current>
+    output_per_million_tokens_usd: <verify_current>

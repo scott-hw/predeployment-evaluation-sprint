@@ -1,0 +1,39 @@
+# Environment and secrets
+.env
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Generated outputs — large, reproducible from inputs
+evaluation-pipeline/runs/
+benchmark-tier-creation-pipeline/data/outputs/
+benchmark-tier-creation-pipeline/data/intermediate/
+benchmark-tier-creation-pipeline/data/cache/
+
+# Reddit scraper — raw downloads are large and re-fetchable
+reddit-scraper/data/raw/
+reddit-scraper/data/processed/
+reddit-scraper/data/*.duckdb
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+*.swp

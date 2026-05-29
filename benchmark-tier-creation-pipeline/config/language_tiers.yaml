@@ -1,0 +1,57 @@
+# Language tier definitions for benchmark generation
+# Each tier defines the linguistic register target for question variants.
+
+tiers:
+  T0:
+    name: "FAQ Verbatim"
+    description: >
+      The official FAQ question is copied verbatim from the source packet.
+      No LLM call is made. This tier tests the chatbot on the canonical
+      phrasing used by the issuing agency.
+    llm_generated: false
+
+  T1:
+    name: "Clean Constituent"
+    description: >
+      A natural, grammatically correct question in plain American English.
+      Complete sentences, proper capitalization and punctuation.
+      Sounds like a literate adult writing a formal inquiry.
+      No jargon, abbreviations, or SMS shorthand.
+    llm_generated: true
+    style_guidance:
+      - Complete sentences
+      - Standard capitalization and punctuation
+      - No abbreviations or SMS shorthand
+      - Neutral, polite tone
+      - Question mark at end
+
+  T2:
+    name: "Realistic Messy"
+    description: >
+      Casual but complete. May have minor typos, informal vocabulary,
+      or conversational contractions. Sounds like a real person typing
+      quickly on a phone or tablet. Complete thoughts but informal register.
+    llm_generated: true
+    style_guidance:
+      - May omit Oxford commas or have minor punctuation gaps
+      - Contractions encouraged (can't, I'm, don't)
+      - Informal vocabulary (got, stuff, thing)
+      - May start with "so" or other discourse markers
+      - No heavy SMS shorthand
+      - Intent still clear
+
+  T3:
+    name: "High Friction"
+    description: >
+      Fragmented, SMS shorthand style. May omit articles, use abbreviations,
+      mix in emotional language, or fragment across partial sentences.
+      Highest friction for NLP parsing. Tests the chatbot's ability to
+      handle real distressed-survivor communication patterns.
+    llm_generated: true
+    style_guidance:
+      - May omit articles (a, an, the)
+      - Abbreviations encouraged (fema, ca, govt, pls, asap, idk)
+      - Lowercase acceptable throughout
+      - Fragmented phrasing ("need help with rent after fire")
+      - May include emotional register (stressed, worried, urgent)
+      - No longer than 2 short fragments

@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/benchmark-pipeline/topic_taxonomy.schema.json",
+  "title": "TopicTaxonomy",
+  "description": "Taxonomy of administrative topic tags used to classify source packets and benchmark items.",
+  "type": "object",
+  "required": ["administrative_topics"],
+  "additionalProperties": false,
+  "properties": {
+    "administrative_topics": {
+      "type": "object",
+      "description": "Map from topic key (used as tag) to topic entry.",
+      "additionalProperties": {
+        "$ref": "#/definitions/TopicEntry"
+      }
+    }
+  },
+  "definitions": {
+    "TopicEntry": {
+      "type": "object",
+      "required": ["label", "description"],
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Human-readable label for this topic."
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Description of what this topic covers."
+        },
+        "subtopics": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Optional list of subtopic strings for documentation."
+        }
+      }
+    }
+  }
+}

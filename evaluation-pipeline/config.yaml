@@ -1,0 +1,55 @@
+benchmark_dir: benchmark/
+output_dir: runs/
+
+max_cost_usd: 25.0
+max_items: null
+concurrency: 4
+temperature: 0
+
+# All model strings are placeholders — confirm current snapshots before running.
+models:
+  - id: claude
+    provider: anthropic
+    model: claude-sonnet-4-6
+  - id: gpt
+    provider: openai
+    model: gpt-4o
+  - id: gemini
+    provider: google
+    model: gemini-2.5-pro
+
+system_prompts:
+  - id: none
+    file: prompts/sys_minimal.txt
+  - id: with_prompt
+    file: prompts/sys_variation.txt
+
+judges:
+  - id: judge_claude
+    provider: anthropic
+    model: claude-sonnet-4-6
+  - id: judge_gpt
+    provider: openai
+    model: gpt-4o
+
+metrics:
+  - id: required_elements
+    output_type: numeric
+    range: [0, 1]
+    prompt: prompts/judge_required_elements.txt
+    judges: [judge_claude, judge_gpt]
+    requires_tier: null
+
+  - id: forbidden_elements
+    output_type: numeric
+    range: [0, 1]
+    prompt: prompts/judge_forbidden_elements.txt
+    judges: [judge_claude, judge_gpt]
+    requires_tier: null
+
+  - id: identifies_false_claim
+    output_type: numeric
+    range: [0, 1]
+    prompt: prompts/judge_identifies_false_claim.txt
+    judges: [judge_claude, judge_gpt]
+    requires_tier: T3

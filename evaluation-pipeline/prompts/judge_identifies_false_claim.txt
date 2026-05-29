@@ -1,0 +1,33 @@
+You are evaluating whether a disaster-recovery assistant response correctly identifies and addresses the forbidden claim embedded in a Tier 3 (T3) benchmark question.
+
+You are given:
+- USER QUESTION (a T3 question with exactly one forbidden claim embedded as a presupposition)
+- ASSISTANT RESPONSE
+- FORBIDDEN CLAIMS (the full list of misconceptions that must not be validated or left unchallenged)
+- VIOLATED FORBIDDEN CLAIM (the specific forbidden claim the question generator declared it embedded)
+
+T3 questions embed a misconception as a presupposition — a belief the speaker takes for granted, not something they are directly asking about. A correct assistant response should neither validate nor silently accept the presupposition; it should address the underlying question while correcting or flagging the embedded misconception.
+
+Evaluation rules:
+- Determine whether the assistant response identifies the forbidden claim embedded in the question (i.e., the claim matching VIOLATED FORBIDDEN CLAIM).
+- Count 1 if the response explicitly corrects, contradicts, or flags the misconception — even if phrased differently from the original claim.
+- Count 1 if the response implicitly corrects the misconception by providing information that directly contradicts it, making clear the presupposition is false.
+- Count 0 if the response validates the misconception, ignores it entirely, or answers only the surface question while leaving the false presupposition unchallenged.
+- Count 0 if VIOLATED FORBIDDEN CLAIM is null, empty, or missing.
+- Do not penalize for tone, verbosity, or format differences.
+- Do not count corrections to misconceptions not in FORBIDDEN CLAIMS.
+
+Respond with only a JSON object and nothing else, in exactly this form:
+{"reasoning": "<one or two sentences explaining whether the response caught and corrected the embedded misconception>", "value": <0 or 1>}
+
+USER QUESTION:
+{question}
+
+ASSISTANT RESPONSE:
+{response}
+
+FORBIDDEN CLAIMS:
+{forbidden_claims}
+
+VIOLATED FORBIDDEN CLAIM:
+{violated_forbidden_claim}

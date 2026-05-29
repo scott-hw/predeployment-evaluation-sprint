@@ -1,0 +1,228 @@
+# Keyword dictionaries for tagging Eaton Fire recovery questions.
+# Multi-label: a record can match multiple program_area and question_type tags.
+# Edit freely after eyeballing the first run — you'll find synonyms you missed.
+
+program_area:
+  fema_ia:
+    - fema
+    - "individual assistance"
+    - "ia application"
+    - "disasterassistance"
+    - "disaster assistance"
+    - "fema app"
+    - "fema claim"
+    - "fema registration"
+    - "fema denial"
+    - "fema appeal"
+    - "fema inspector"
+    - "fema hotel"
+    - "transitional sheltering"
+    - "tsa"   # transitional sheltering assistance
+
+  sba:
+    - " sba "
+    - "small business administration"
+    - "disaster loan"
+    - "sba loan"
+    - "eidl"
+    - "economic injury"
+
+  insurance:
+    - insurance
+    - claim
+    - adjuster
+    - adjuster
+    - policy
+    - "cdi"
+    - "department of insurance"
+    - underinsured
+    - uninsured
+    - "coverage"
+    - "total loss"
+    - "actual cash value"
+    - "replacement cost"
+    - "loss of use"
+    - "fair plan"
+    - "california fair plan"
+    - "additional living expenses"
+    - "ale"
+    - "public adjuster"
+    - "bad faith"
+    - "smoke damage"
+    - deductible
+
+  d_snap:
+    - "d-snap"
+    - dsnap
+    - calfresh
+    - "food stamps"
+    - "snap benefit"
+    - "ebt"
+    - "food assistance"
+    - "p-ebt"
+
+  dua:
+    - dua
+    - "disaster unemployment"
+    - " edd "
+    - "unemployment claim"
+    - "unemployment insurance"
+    - "disaster ui"
+
+  dmv:
+    - " dmv "
+    - "driver's license"
+    - "drivers license"
+    - "replace registration"
+    - "title replacement"
+    - "vehicle title"
+    - "car registration"
+    - "license plate"
+    - "replace license"
+
+  tax:
+    - " irs "
+    - " ftb "
+    - "tax extension"
+    - "casualty loss"
+    - "extension to file"
+    - "franchise tax"
+    - "tax relief"
+    - "tax deduction"
+    - "disaster loss"
+    - "form 4684"
+    - "property tax"
+
+  debris:
+    - debris
+    - "epa phase"
+    - "army corps"
+    - "right of entry"
+    - " roe "
+    - "soil testing"
+    - hazardous
+    - "ash removal"
+    - "debris removal"
+    - "lot clearing"
+    - "phase 1"
+    - "phase 2"
+    - "hazmat"
+
+  housing:
+    - rental
+    - landlord
+    - "housing assistance"
+    - "rental assistance"
+    - "airbnb"
+    - "hotel voucher"
+    - "temporary housing"
+    - "evacuation center"
+    - "shelter"
+    - "lease"
+    - "eviction"
+    - "rent increase"
+
+  permits:
+    - permit
+    - rebuild
+    - "building department"
+    - "lacbs"
+    - "code compliance"
+    - "setback"
+    - "architect"
+    - "contractor"
+    - "building permit"
+    - "demolition permit"
+    - "owner-builder"
+    - "streamlined"
+
+  utilities:
+    - "edison"
+    - " sce "
+    - "socalgas"
+    - "utility"
+    - "water bill"
+    - " ladwp "
+    - "power restoration"
+    - "gas restoration"
+    - "water service"
+    - "electric bill"
+    - "turn off service"
+
+  schools:
+    - school
+    - " lausd "
+    - " pusd "
+    - "school district"
+    - enrollment
+    - "school transfer"
+    - "open enrollment"
+    - "pasadena unified"
+    - "altadena elementary"
+    - "mckinnon act"
+
+question_type:
+  eligibility:
+    - eligible
+    - qualify
+    - "can i get"
+    - "do i qualify"
+    - "am i eligible"
+    - "who qualifies"
+    - "who is eligible"
+    - "do i need to"
+    - "do renters"
+    - "does this apply"
+
+  deadline:
+    - deadline
+    - "by when"
+    - "how long do i have"
+    - expire
+    - "last day"
+    - "how many days"
+    - "time limit"
+    - "cutoff"
+    - "run out"
+
+  process:
+    - "how do i"
+    - "what's the process"
+    - "how to apply"
+    - " steps "
+    - "process for"
+    - "how does"
+    - "what do i do"
+    - "where do i start"
+    - "walk me through"
+
+  document:
+    - "what documents"
+    - "what do i need"
+    - "proof of"
+    - verification
+    - "do i need to provide"
+    - "what proof"
+    - "lease agreement"
+    - "documentation"
+    - "records"
+
+  contact:
+    - "who do i call"
+    - "phone number"
+    - " contact "
+    - "where do i go"
+    - "who handles"
+    - "who should i"
+    - "who can help"
+    - "hotline"
+    - "email address"
+
+  status:
+    - "check status"
+    - "where is my"
+    - "still waiting"
+    - "how long"
+    - "when will"
+    - "any update"
+    - "status of"

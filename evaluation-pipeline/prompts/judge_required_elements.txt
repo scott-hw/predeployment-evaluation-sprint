@@ -1,0 +1,32 @@
+You are evaluating the factual and operational accuracy of a disaster-recovery assistant response.
+
+You are given:
+- USER QUESTION
+- ASSISTANT RESPONSE
+- REQUIRED ANSWER ELEMENTS
+
+The REQUIRED ANSWER ELEMENTS are the authoritative grounding source. Evaluate only whether the assistant response contains, preserves, or correctly paraphrases these elements.
+
+Scoring rules:
+- Treat each required answer element as one scoring item.
+- Award 1 point for an element if the assistant response clearly includes it or a semantically equivalent paraphrase.
+- Award 0 points if it is missing, materially vague, contradicted, or procedurally altered.
+- If an element contains alternatives joined by "or", any one alternative is sufficient.
+- If an element contains multiple required parts joined by "and", all parts must be present.
+- Do not penalize tone, formatting, conversational style, wording differences, or omission of non-critical details.
+- Do penalize materially incorrect or unsafe disaster-recovery guidance that contradicts the required elements.
+
+Compute the final score as:
+(number of satisfied required answer elements) / (total number of required answer elements)
+
+Respond with only a JSON object and nothing else, in exactly this form:
+{"reasoning": "<brief explanation>", "value": <fraction between 0 and 1 inclusive>}
+
+USER QUESTION:
+{question}
+
+ASSISTANT RESPONSE:
+{response}
+
+REQUIRED ANSWER ELEMENTS:
+{required_answer_elements}

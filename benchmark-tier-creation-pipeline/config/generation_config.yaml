@@ -1,0 +1,60 @@
+# Generation pipeline configuration
+# All values here can be overridden by CLI flags.
+
+# -----------------------------------------------------------------
+# LLM model settings
+# -----------------------------------------------------------------
+generator_model: "claude-sonnet-4-6"
+validator_model: "claude-haiku-4-5-20251001"
+
+generator_temperature: 1.0
+# Validator always uses temperature 0.0 (hardcoded in validator.py)
+
+generator_max_tokens: 512
+validator_max_tokens: 768
+
+# -----------------------------------------------------------------
+# Generation settings
+# -----------------------------------------------------------------
+items_per_tier_per_packet: 1   # default items generated per tier per source packet
+active_tiers:
+  - T0
+  - T1
+  - T2
+  - T3
+
+language_examples_per_tier: 3  # number of language examples sampled per LLM call
+
+# -----------------------------------------------------------------
+# Validation settings
+# -----------------------------------------------------------------
+max_regeneration_attempts: 2   # retries before item is rejected (does not count first attempt)
+exclude_minor_concerns: false  # if true, valid_with_minor_concerns -> rejected
+
+# -----------------------------------------------------------------
+# Rate limiter
+# -----------------------------------------------------------------
+rate_limiter:
+  requests_per_minute: 50
+  max_concurrent_requests: 5
+  initial_backoff_s: 1.0
+  max_backoff_s: 60.0
+  backoff_multiplier: 2.0
+  max_retries: 6
+
+# -----------------------------------------------------------------
+# Cache
+# -----------------------------------------------------------------
+cache:
+  enabled: true
+  cache_dir: "data/cache"
+
+# -----------------------------------------------------------------
+# Output
+# -----------------------------------------------------------------
+output:
+  output_dir: "data/outputs"
+  write_jsonl: true
+  write_csv: true
+  write_manifest: true
+  write_rejected_candidates: true

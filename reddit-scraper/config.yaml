@@ -1,0 +1,73 @@
+# Eaton Fire Question Mining Pipeline - Configuration
+
+arctic_shift:
+  base_url: "https://arctic-shift.photon-reddit.com"
+  # Polite request delay in seconds between API calls
+  request_delay: 0.3
+  # Max results per page (Arctic Shift max is 100; "auto" is 100-1000 but unreliable)
+  page_size: 100
+  # Timeout in seconds
+  timeout: 30
+
+collection:
+  after: "2025-01-07"
+  before: "2025-07-01"
+
+  # Full subreddit pulls — every post (and its comments) in the date window.
+  # These communities were dominated by Eaton fire content during this period.
+  full_pulls:
+    - Altadena
+    - Pasadena
+
+  # Keyword-scoped searches — only posts whose title or body match these terms.
+  # Used for large subreddits where only a fraction of posts are fire-related.
+  # r/EatonFire and r/LACountyFires have 0 posts in Arctic Shift archive.
+  keyword_searches:
+    - subreddit: losangeles
+      keywords:
+        - "eaton fire"
+        - "altadena fire"
+        - "eaton canyon fire"
+        - "altadena"
+    - subreddit: California
+      keywords:
+        - "eaton fire"
+        - "altadena fire"
+    - subreddit: Insurance
+      keywords:
+        - "eaton fire"
+        - "altadena fire"
+        - "wildfire claim"
+    - subreddit: personalfinance
+      keywords:
+        - "california wildfire"
+        - "wildfire insurance"
+        - "altadena"
+        - "fema claim"
+
+  # Whether to fetch full comment trees for each collected post
+  fetch_comments: true
+  # Max comments per post tree (9999 = effectively all)
+  max_comments_per_post: 9999
+
+paths:
+  raw_dir: "data/raw"
+  db_path: "data/eaton_pipeline.duckdb"
+  parquet_out: "data/processed/eaton_questions.parquet"
+  report_out: "data/processed/eaton_report.md"
+
+clustering:
+  model: "paraphrase-multilingual-MiniLM-L12-v2"
+  algorithm: "hdbscan"   # "hdbscan" or "agglomerative"
+  hdbscan:
+    min_cluster_size: 3
+    min_samples: 2
+    metric: "euclidean"   # embeddings are L2-normalized, so euclidean ≈ cosine
+  agglomerative:
+    n_clusters: null       # auto via distance threshold
+    distance_threshold: 0.4  # ~cosine distance 0.4 ≈ similarity 0.85
+    linkage: "average"
+
+filter:
+  min_chars: 20
+  max_chars: 2000

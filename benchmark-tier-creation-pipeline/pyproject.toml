@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "benchmark-pipeline"
+version = "0.1.0"
+description = "Disaster services chatbot benchmark generation pipeline for the Eaton Fire (Jan 2025)"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "anthropic>=0.50.0",
+    "pydantic>=2.0.0",
+    "pyyaml>=6.0",
+    "click>=8.0.0",
+    "jsonschema>=4.0.0",
+    "python-dotenv>=1.0.0",
+    "tiktoken>=0.5.0",
+]
+
+[project.optional-dependencies]
+openai = ["openai>=1.0.0"]
+
+[project.scripts]
+benchmark-pipeline = "benchmark_pipeline.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/benchmark_pipeline"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"

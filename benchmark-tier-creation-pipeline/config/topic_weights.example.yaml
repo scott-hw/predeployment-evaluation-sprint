@@ -1,0 +1,20 @@
+# Example topic weight configuration.
+# Target proportion of benchmark items per administrative topic.
+# Weights should sum to approximately 1.0.
+#
+# The pipeline will warn if actual distribution deviates from
+# target by more than 10 percentage points.
+#
+# To use: copy this file to topic_weights.yaml and adjust to your corpus.
+
+topic_weights:
+  FEMA: 0.25
+  renter_assistance: 0.15
+  debris_removal: 0.10
+  utility_assistance: 0.08
+  insurance: 0.10
+  local_referral: 0.10
+  mental_health: 0.07
+  fraud_scams: 0.05
+  small_business: 0.05
+  immigration: 0.05

@@ -1,0 +1,135 @@
+# Example topic taxonomy for the Eaton Fire (Jan 2025) benchmark
+# Every administrative_topic_tag used in source packets must appear here.
+
+administrative_topics:
+
+  FEMA:
+    label: "FEMA Individual Assistance"
+    description: >
+      Programs administered by the Federal Emergency Management Agency for
+      individuals and households affected by a presidentially declared disaster.
+      Includes Individual and Households Program (IHP), rental assistance,
+      personal property replacement, and transitional sheltering assistance.
+    subtopics:
+      - IHP_registration
+      - rental_assistance
+      - personal_property
+      - transitional_sheltering
+      - appeals_process
+
+  renter_assistance:
+    label: "Renter Assistance Programs"
+    description: >
+      State, county, and nonprofit programs that provide rental assistance,
+      temporary housing vouchers, or security deposit help to renters displaced
+      by the disaster. Distinct from FEMA rental assistance.
+    subtopics:
+      - emergency_rental_assistance
+      - housing_vouchers
+      - security_deposit_help
+      - eviction_protections
+
+  debris_removal:
+    label: "Debris Removal and Cleanup"
+    description: >
+      Government-sponsored debris removal programs (e.g., CalOES/USACE),
+      hazardous materials handling, ash cleanup guidance, and private
+      contractor cleanup options.
+    subtopics:
+      - government_debris_program
+      - hazardous_waste
+      - ash_cleanup_safety
+      - private_cleanup
+
+  utility_assistance:
+    label: "Utility Assistance"
+    description: >
+      Programs to help with utility bills (electricity, gas, water) for
+      disaster-affected residents, including utility shutoff protections
+      and reconnection assistance.
+    subtopics:
+      - electric_bill_help
+      - gas_bill_help
+      - water_bill_help
+      - shutoff_moratorium
+
+  insurance:
+    label: "Insurance Claims and Coverage"
+    description: >
+      Information about homeowners, renters, and auto insurance claims
+      after a disaster. Includes California Department of Insurance
+      resources, claim filing guidance, and rights under California law.
+    subtopics:
+      - homeowners_insurance
+      - renters_insurance
+      - auto_insurance
+      - claim_filing
+      - california_fair_plan
+
+  local_referral:
+    label: "Local Referral and Navigation Services"
+    description: >
+      Services that connect disaster survivors with local resources,
+      including 211 LA, disaster recovery centers (DRCs), community
+      organizations, and legal aid referrals.
+    subtopics:
+      - 211_LA
+      - disaster_recovery_centers
+      - community_organizations
+      - legal_aid
+
+  mental_health:
+    label: "Mental Health and Crisis Support"
+    description: >
+      Crisis counseling, mental health hotlines, and disaster behavioral
+      health services available to survivors and first responders.
+    subtopics:
+      - crisis_counseling
+      - disaster_distress_helpline
+      - local_mental_health
+      - peer_support
+
+  fraud_scams:
+    label: "Fraud Prevention and Scam Reporting"
+    description: >
+      Guidance on avoiding contractor fraud, price gouging, phishing scams,
+      and fraudulent aid claims. Includes how to report to California AG,
+      CSLB, and FEMA fraud hotline.
+    subtopics:
+      - contractor_fraud
+      - price_gouging
+      - identity_theft
+      - aid_fraud
+      - reporting_resources
+
+  small_business:
+    label: "Small Business Assistance"
+    description: >
+      SBA disaster loans, California small business grants, and technical
+      assistance programs for businesses affected by the disaster.
+    subtopics:
+      - SBA_disaster_loans
+      - CA_small_business_grants
+      - technical_assistance
+
+  immigration:
+    label: "Immigration Status and Eligibility"
+    description: >
+      Guidance on disaster assistance eligibility for mixed-status households,
+      undocumented residents, DACA recipients, and other immigration statuses.
+      Includes FEMA's policy on household member registration.
+    subtopics:
+      - mixed_status_households
+      - DACA_eligibility
+      - undocumented_residents
+      - FEMA_household_policy
+
+  211_LA:
+    label: "211 LA County"
+    description: >
+      Los Angeles County's 211 information and referral service for
+      social services, disaster resources, and community programs.
+    subtopics:
+      - disaster_referrals
+      - social_services
+      - housing_resources

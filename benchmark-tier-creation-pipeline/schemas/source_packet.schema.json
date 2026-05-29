@@ -1,0 +1,107 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/benchmark-pipeline/source_packet.schema.json",
+  "title": "SourcePacket",
+  "description": "A single question-answer pair that serves as the factual authority for benchmark item generation.",
+  "type": "object",
+  "required": [
+    "source_packet_id",
+    "source_title",
+    "source_type",
+    "source_agency",
+    "source_url",
+    "as_of_date",
+    "official_answer",
+    "normalized_resident_need",
+    "required_answer_elements",
+    "forbidden_claims"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "source_packet_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Unique identifier for this source packet."
+    },
+    "source_title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Human-readable title of the source document or FAQ item."
+    },
+    "source_type": {
+      "type": "string",
+      "enum": ["faq", "press_release", "policy_doc", "webpage", "flyer", "other"],
+      "description": "Type of the source document."
+    },
+    "source_agency": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Issuing agency or organization."
+    },
+    "source_url": {
+      "type": "string",
+      "minLength": 1,
+      "description": "URL of the source document."
+    },
+    "as_of_date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}(-\\d{2})?$",
+      "description": "Date the content was current (YYYY-MM or YYYY-MM-DD)."
+    },
+    "official_question": {
+      "type": ["string", "null"],
+      "description": "Official FAQ question text (optional). Required for T0 tier generation."
+    },
+    "official_answer": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Official answer text. Sole factual authority for benchmark items."
+    },
+    "normalized_resident_need": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Canonical statement of the resident's information need, in plain language."
+    },
+    "assumed_facts": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Facts assumed true for this Q&A (e.g., resident is a renter)."
+    },
+    "out_of_scope_facts": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Facts explicitly out of scope for this Q&A."
+    },
+    "required_answer_elements": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 1,
+      "description": "Elements a correct chatbot response must include."
+    },
+    "optional_answer_elements": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Elements a correct chatbot response may include."
+    },
+    "forbidden_claims": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 1,
+      "description": "Claims that must not appear in a correct chatbot response."
+    },
+    "administrative_topic_tags": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Topic tags; must match keys in the active topic taxonomy."
+    },
+    "content_validity_sources": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "URLs or citations used to verify content accuracy."
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Optional free-text notes for pipeline operators."
+    }
+  }
+}
