@@ -1,6 +1,6 @@
 # Pre-Deployment Diagnostic Evaluation for Public Sector Chatbots
 
-Replication code for Hwang, Jiang & Canessa (2026), *Pre-Deployment Diagnostic Evaluation for Public Sector Chatbots*. The paper evaluates a California state agency's Claude-based Digital Assistant against commercial models on post-disaster resource navigation questions derived from the January 2025 Eaton Fire.
+Replication code for *Pre-Deployment Diagnostic Evaluation for Public Sector Chatbots*. The paper evaluates a California state agency's Claude-based Digital Assistant against commercial models on post-disaster resource navigation questions derived from the January 2025 Eaton Fire.
 
 ## Repository structure
 
