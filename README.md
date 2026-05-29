@@ -64,12 +64,4 @@ Sends every benchmark question to each model × system-prompt combination, then 
 
 See [`evaluation-pipeline/README.md`](evaluation-pipeline/README.md) for setup and usage.
 
-## Citation
-
-```
-@article{hwang2026predeployment,
-  title   = {Pre-Deployment Diagnostic Evaluation for Public Sector Chatbots},
-  author  = {Hwang, Scott and Jiang, Nancy and Canessa, Lindsey},
-  year    = {2026}
-}
 ```
